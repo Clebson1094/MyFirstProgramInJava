@@ -5,12 +5,15 @@ public class Contagem {
 
       private String url;
       private String token;
-      private String Authorization;
+      private Map<String, String> headers;
 
 
      public Contagem(String url, String token) {
           this.url = url;
           this.token = token;
+          this.headers = new HashMap<>();
+
+          headers.put("Authorization", "Bearer " + this.token);
      }
 
      public String getUrl() {
@@ -18,18 +21,21 @@ public class Contagem {
      }
 
      public void setUrl(String url) {
+
           this.url = url;
      }
 
      public String getToken() {
+
           return token;
      }
 
      public void setToken(String token) {
+
           this.token = token;
      }
 
-     Map<String, String> headers = new HashMap<>();
 
-     headers.put(Authorization, "Baerer");
 }
+
+
